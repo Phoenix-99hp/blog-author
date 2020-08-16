@@ -4,7 +4,6 @@ import WritePost from "./pages/WritePost";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Login from "./pages/Login";
-// import Unauthorized from "./pages/Unauthorized";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
         <Route exact path="/home" render={props => (<Home {...props} />)} />
         <Route exact path="/write" render={props => (<WritePost {...props} />)} />
         <Route exact path="/error" render={props => (<Error {...props} />)} />
-        {/* <Route exact path="/unauthorized" render={props => (<Unauthorized {...props} />)} /> */}
       </div>
     </Router>
   );
