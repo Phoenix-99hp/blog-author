@@ -21,7 +21,8 @@ const Write = () => {
             text: e.target.parentElement.previousElementSibling.value.trim(),
             user: getUser()
         }
-        fetch("http://localhost:3001/api/posts/new", {
+        fetch("https://nameless-plains-23983.herokuapp.com/api/posts/new", {
+            // fetch("http://localhost:3001/api/posts/new", {
             method: "POST",
             mode: "cors",
             headers: {

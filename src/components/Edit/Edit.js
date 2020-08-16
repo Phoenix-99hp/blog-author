@@ -13,7 +13,8 @@ const Edit = () => {
     const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:3001/api/posts", {
+        fetch("https://nameless-plains-23983.herokuapp.com/api/posts", {
+            // fetch("http://localhost:3001/api/posts", {
             method: "GET",
             mode: "cors",
         })
@@ -52,7 +53,8 @@ const Edit = () => {
     const nextPost = () => {
         setSpinner(true);
         setCommentsAreActive(false);
-        fetch(`http://localhost:3001/api/posts/${currentPost._id}/next`, {
+        fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/next`, {
+            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/next`, {
             method: "GET",
             mode: "cors"
         })
@@ -72,7 +74,8 @@ const Edit = () => {
     const prevPost = () => {
         setSpinner(true);
         setCommentsAreActive(false);
-        fetch(`http://localhost:3001/api/posts/${currentPost._id}/prev`, {
+        fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/prev`, {
+            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/prev`, {
             method: "GET",
             mode: "cors"
         })
@@ -90,7 +93,8 @@ const Edit = () => {
     }
 
     const deletePost = () => {
-        fetch(`http://localhost:3001/api/posts/${currentPost._id}/delete`, {
+        fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/delete`, {
+            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/delete`, {
             method: "DELETE",
             mode: "cors"
         })
@@ -103,7 +107,8 @@ const Edit = () => {
     }
 
     const deleteComments = () => {
-        fetch(`http://localhost:3001/api/posts/${currentPost._id}/comments/delete`, {
+        fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/comments/delete`, {
+            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/comments/delete`, {
             method: "DELETE",
             mode: "cors"
         })

@@ -28,7 +28,8 @@ const Comments = ({ commentsAreActive, currentPost }) => {
 
     const deleteComment = (e) => {
         const commentToDelete = e.target.parentElement.dataset.id;
-        fetch(`http://localhost:3001/api/comments/${commentToDelete}/delete`, {
+        fetch(`https://nameless-plains-23983.herokuapp.com/api/comments/${commentToDelete}/delete`, {
+            // fetch(`http://localhost:3001/api/comments/${commentToDelete}/delete`, {
             method: "DELETE",
             mode: "cors"
         })
