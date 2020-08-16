@@ -1,0 +1,14 @@
+#error {
+    color: red;
+    font-size: 30px;
+}
+
+#link {
+    text-decoration: none;
+    padding-top: 20px;
+    color: rgb(0, 174, 255);
+}
+
+#errorSpan {
+    color: black;
+}

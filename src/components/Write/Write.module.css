@@ -1,0 +1,91 @@
+.postContainer {
+    border: 2px solid black;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+    height: fit-content;
+    padding-bottom: 10px;
+}
+
+.postInfo {
+    padding-top: 10px;
+}
+
+.postTitle {
+    font-size: 40px;
+}
+
+.postBody {
+    font-size: 20px;
+}
+
+label {
+    width: fit-content;
+}
+
+#inputContainer {
+    margin: 0 auto;
+    margin-top: 10px;
+    max-width: 500px;
+}
+
+#postTitle {
+    width: 70%;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#postArea{
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    height: 200px;
+    resize: none;
+    font: 400 13.3333px Arial;
+}
+
+.submitCancelContainer {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+    align-self: center;
+    max-width: 500px;
+}
+
+#submitCommentBtn{
+    position: absolute;
+    left: 0;
+    background-color: rgb(145, 231, 16);
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0;
+}
+
+#cancelBtn {
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    margin: 0;
+}
+
+.commentBtn:hover, #submitCommentBtn:hover, #cancelBtn:hover {
+    opacity: 0.8;
+}
+
+#mainContainer {
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
