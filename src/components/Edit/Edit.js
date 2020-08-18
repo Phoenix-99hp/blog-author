@@ -99,7 +99,7 @@ const Edit = () => {
             mode: "cors"
         })
             .then(() => {
-                window.location.href = "/home";
+                window.location.href = "/blog-author/home";
             })
             .catch(error => {
                 console.log(error);
@@ -115,10 +115,10 @@ const Edit = () => {
             .then((res) => {
                 if (res) {
                     console.log(res);
-                    window.location.href = "/home";
+                    window.location.href = "/blog-author/home";
                 }
                 else {
-                    window.location.href = "/error";
+                    window.location.href = "/blog-author/error";
                 }
             })
             .catch(error => {

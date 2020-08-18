@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styles from "./Comments.module.css";
 import moment from "moment";
 import Spinner from "../Spinner";
+import { useHistory } from "react-router-dom";
 
 const Comments = ({ commentsAreActive, currentPost }) => {
 
     const [commentSpinner, setCommentSpinner] = useState(false);
     const [active, setActive] = useState(false);
+    const history = useHistory();
 
     useEffect(() => {
         if (commentsAreActive) {
@@ -35,11 +37,10 @@ const Comments = ({ commentsAreActive, currentPost }) => {
         })
             .then((response) => {
                 if (response) {
-                    console.log(response);
-                    window.location.href = "/home";
+                    useHistory.push("/home");
                 }
                 else {
-                    window.location.href = "/error";
+                    useHistory.push("/error");
                 }
             })
             .catch(error => {

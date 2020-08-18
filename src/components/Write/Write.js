@@ -15,7 +15,6 @@ const Write = () => {
 
     const submitPost = (e) => {
         e.preventDefault();
-        console.log(getUser());
         const newPost = {
             title: e.target.parentElement.previousElementSibling.previousElementSibling.children[1].value.trim(),
             text: e.target.parentElement.previousElementSibling.value.trim(),
@@ -36,10 +35,10 @@ const Write = () => {
             })
             .then(response => {
                 if (response.updated) {
-                    window.location.href = "/home";
+                    window.location.href = "/blog-author/home";
                 }
                 else {
-                    window.location.href = "/error";
+                    window.location.href = "/blog-author/error";
                 }
             })
             .catch(error => {

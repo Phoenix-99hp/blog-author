@@ -3,10 +3,12 @@ import { handleLogin, isLoggedIn } from "../../services/auth";
 import Layout from "../../components/Layout";
 import styles from "./Login.module.css";
 import Spinner from "../../components/Spinner";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
 
     const [spinner, setSpinner] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
         setTimeout(() => {
@@ -45,7 +47,7 @@ const Login = () => {
                     handleLogin(response);
                 }
                 else {
-                    window.location.href = "/error";
+                    history.push("/error");
                 }
             })
             .catch(error => {
