@@ -36,7 +36,7 @@ const Comments = ({ commentsAreActive, currentPost }) => {
         })
             .then((response) => {
                 if (response) {
-                    window.location.reload();
+                    history.replace("/");
                 }
                 else {
                     history.push("/error");

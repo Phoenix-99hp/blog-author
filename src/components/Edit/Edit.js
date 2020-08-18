@@ -97,7 +97,7 @@ const Edit = () => {
             mode: "cors"
         })
             .then(() => {
-                window.location.reload();
+                history.replace("/");
             })
             .catch(error => {
                 history.replace("/error");
@@ -111,7 +111,7 @@ const Edit = () => {
         })
             .then((res) => {
                 if (res) {
-                    window.location.reload();
+                    history.replace("/");
                 }
                 else {
                     history.replace("/error");
