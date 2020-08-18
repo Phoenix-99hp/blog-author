@@ -43,7 +43,7 @@ const Login = () => {
             .then(response => {
                 console.log(response);
                 if (response) {
-                    handleLogin(response);
+                    handleLogin(response, history);
                 }
                 else {
                     history.push("/error");

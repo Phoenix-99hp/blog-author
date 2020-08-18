@@ -1,5 +1,3 @@
-import { useHistory } from "react-router-dom";
-
 export const isBrowser = () => typeof window !== "undefined"
 
 export const getUser = () => {
@@ -14,11 +12,10 @@ export const getUser = () => {
 const setUser = user =>
     isBrowser() ? window.sessionStorage.setItem("User", JSON.stringify(user)) : null
 
-export const handleLogin = user => {
-    const history = useHistory();
+export const handleLogin = (user, hist) => {
     if (isBrowser()) {
         setUser(user);
-        history.push("/home");
+        hist.push("/home");
         // window.location.href = "/home";
     }
     else {
