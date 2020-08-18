@@ -20,7 +20,7 @@ const Login = () => {
         if (isLoggedIn()) {
             history.push("/home");
         }
-    }, [])
+    })
 
     const loginReq = (e) => {
         e.preventDefault();
