@@ -1,7 +1,3 @@
-import { useHistory } from "react-router-dom";
-
-const history = useHistory();
-
 export const isBrowser = () => typeof window !== "undefined"
 
 export const getUser = () => {

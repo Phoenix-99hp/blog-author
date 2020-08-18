@@ -18,9 +18,8 @@ const Login = () => {
 
     useEffect(() => {
         if (isLoggedIn()) {
-            window.location.href = "/home";
+            window.location.href = "/blog-author/home";
         }
-
     }, [])
 
     const loginReq = (e) => {
