@@ -5,8 +5,10 @@ import Spinner from "../Spinner";
 import Comments from "../Comments";
 import NoPosts from "../NoPosts";
 import { logout } from "../../services/auth";
+import { useHistory } from "react-router-dom";
 
 const Edit = () => {
+    console.log(useHistory());
     const [commentsAreActive, setCommentsAreActive] = useState(false);
     const [currentPost, setCurrentPost] = useState(null);
     const [noPosts, setNoPosts] = useState(false);

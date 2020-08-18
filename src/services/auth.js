@@ -16,7 +16,6 @@ export const handleLogin = (user, hist) => {
     if (isBrowser()) {
         setUser(user);
         hist.push("/home");
-        // window.location.href = "/home";
     }
     else {
         return null
