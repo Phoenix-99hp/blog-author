@@ -28,7 +28,6 @@ const Login = () => {
         const data = {
             password: e.target.previousElementSibling.value
         };
-        console.log(data);
         fetch("https://nameless-plains-23983.herokuapp.com/api/login", {
             // fetch(`http://localhost:3001/api/login`, {
             method: "POST",
