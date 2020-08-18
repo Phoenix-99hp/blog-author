@@ -37,10 +37,10 @@ const Comments = ({ commentsAreActive, currentPost }) => {
         })
             .then((response) => {
                 if (response) {
-                    useHistory.push("/home");
+                    history.push("/home");
                 }
                 else {
-                    useHistory.push("/error");
+                    history.push("/error");
                 }
             })
             .catch(error => {
