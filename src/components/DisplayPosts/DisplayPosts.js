@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import NoPosts from "../NoPosts";
 import Spinner from "../Spinner";
+import { useHistory } from "react-router-dom";
 
 const DisplayPosts = () => {
     const [writePost, setWritePost] = useState(false);
     const [currentPost, setCurrentPost] = useState(null);
     const [spinner, setSpinner] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
         fetch("https://nameless-plains-23983.herokuapp.com/api/posts", {
-            // fetch("http://localhost:3001/api/posts", {
             method: "GET",
             mode: "cors",
         })
@@ -18,7 +19,6 @@ const DisplayPosts = () => {
             })
             .then(response => {
                 if (response.post) {
-                    console.log(response.post[0]);
                     setCurrentPost(response.post[0]);
                     setTimeout(() => {
                         setSpinner(false);
@@ -26,7 +26,7 @@ const DisplayPosts = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                history.push("/error");
             })
     }, [])
 

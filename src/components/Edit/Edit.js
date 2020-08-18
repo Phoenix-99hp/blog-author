@@ -8,15 +8,14 @@ import { logout } from "../../services/auth";
 import { useHistory } from "react-router-dom";
 
 const Edit = () => {
-    console.log(useHistory());
     const [commentsAreActive, setCommentsAreActive] = useState(false);
     const [currentPost, setCurrentPost] = useState(null);
     const [noPosts, setNoPosts] = useState(false);
     const [spinner, setSpinner] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
         fetch("https://nameless-plains-23983.herokuapp.com/api/posts", {
-            // fetch("http://localhost:3001/api/posts", {
             method: "GET",
             mode: "cors",
         })
@@ -32,7 +31,7 @@ const Edit = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                history.replace("/error");
             })
     }, [])
 
@@ -56,7 +55,6 @@ const Edit = () => {
         setSpinner(true);
         setCommentsAreActive(false);
         fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/next`, {
-            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/next`, {
             method: "GET",
             mode: "cors"
         })
@@ -69,7 +67,7 @@ const Edit = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                history.replace("/error");
             })
     }
 
@@ -77,7 +75,6 @@ const Edit = () => {
         setSpinner(true);
         setCommentsAreActive(false);
         fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/prev`, {
-            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/prev`, {
             method: "GET",
             mode: "cors"
         })
@@ -90,41 +87,38 @@ const Edit = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                history.replace("/error");
             })
     }
 
     const deletePost = () => {
         fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/delete`, {
-            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/delete`, {
             method: "DELETE",
             mode: "cors"
         })
             .then(() => {
-                window.location.href = "/blog-author/home";
+                window.location.reload();
             })
             .catch(error => {
-                console.log(error);
+                history.replace("/error");
             })
     }
 
     const deleteComments = () => {
         fetch(`https://nameless-plains-23983.herokuapp.com/api/posts/${currentPost._id}/comments/delete`, {
-            // fetch(`http://localhost:3001/api/posts/${currentPost._id}/comments/delete`, {
             method: "DELETE",
             mode: "cors"
         })
             .then((res) => {
                 if (res) {
-                    console.log(res);
-                    window.location.href = "/blog-author/home";
+                    window.location.reload();
                 }
                 else {
-                    window.location.href = "/blog-author/error";
+                    history.replace("/error");
                 }
             })
             .catch(error => {
-                console.log(error);
+                history.replace("/error");
             })
     }
 
@@ -159,10 +153,10 @@ const Edit = () => {
                             </div>
                         </div>
                         <div id={styles.btnContainer}>
-                            <button className={styles.logoutBtn} onClick={() => logout()}>Logout</button>
+                            <button className={styles.logoutBtn} onClick={() => logout(history)}>Logout</button>
                             <button className={`${styles.commentBtn} ${styles.deletePostBtn}`} onClick={() => deletePost()}>Delete Post</button>
                             <button className={`${styles.commentBtn} ${styles.deleteCommentsBtn}`} onClick={() => deleteComments()}>Delete Comments</button>
-                            <button className={`${styles.commentBtn} ${styles.writeBtn}`} onClick={() => window.location.href = "/write"}>Write New Post</button>
+                            <button className={`${styles.commentBtn} ${styles.writeBtn}`} onClick={() => history.replace("/write")}>Write New Post</button>
                         </div>
                         <button className={styles.showCommentsBtn} onClick={(e) => seeHideComments(e)}>{commentsAreActive ? "Hide Comments" : "See Comments"}</button>
                         <Comments commentsAreActive={commentsAreActive} setCommentsAreActive={setCommentsAreActive} currentPost={currentPost} />

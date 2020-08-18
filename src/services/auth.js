@@ -31,10 +31,10 @@ export const isLoggedIn = () => {
     }
 }
 
-export const logout = () => {
+export const logout = (hist) => {
     if (isBrowser()) {
         window.sessionStorage.clear()
-        window.location.href = "/";
+        hist.replace("/");
     }
     else {
         return null

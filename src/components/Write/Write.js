@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styles from "./Write.module.css";
 import Spinner from "../Spinner";
 import { getUser } from "../../services/auth";
+import { useHistory } from "react-router-dom";
 
 const Write = () => {
 
     const [spinner, setSpinner] = useState(true);
+    const history = useHistory();
 
     useEffect(() => {
         setTimeout(() => {
@@ -21,7 +23,6 @@ const Write = () => {
             user: getUser()
         }
         fetch("https://nameless-plains-23983.herokuapp.com/api/posts/new", {
-            // fetch("http://localhost:3001/api/posts/new", {
             method: "POST",
             mode: "cors",
             headers: {
@@ -35,14 +36,14 @@ const Write = () => {
             })
             .then(response => {
                 if (response.updated) {
-                    window.location.href = "/blog-author/home";
+                    history.replace("/home");
                 }
                 else {
-                    window.location.href = "/blog-author/error";
+                    history.replace("/error");
                 }
             })
             .catch(error => {
-                console.log(error);
+                history.replace("/error");
             })
     }
 
@@ -58,7 +59,7 @@ const Write = () => {
                 <textarea id={styles.postArea} />
                 <div className={styles.submitCancelContainer}>
                     <button id={styles.submitCommentBtn} onClick={(e) => submitPost(e)}>Submit Post</button>
-                    <button id={styles.cancelBtn} onClick={() => window.location.href = "/home"}>Cancel</button>
+                    <button id={styles.cancelBtn} onClick={() => history.replace("/home")}>Cancel</button>
                 </div>
             </div>
     )
