@@ -15,7 +15,7 @@ const setUser = user =>
 export const handleLogin = user => {
     if (isBrowser()) {
         setUser(user);
-        window.location.href = "/blog-author/home";
+        window.location.href = "/home";
     }
     else {
         return null
