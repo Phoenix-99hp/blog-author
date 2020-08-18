@@ -19,16 +19,14 @@ const Login = () => {
     useEffect(() => {
         if (isLoggedIn()) {
             history.push("/home");
-            // window.location.href = "/blog-author/home";
         }
-    }, [])
+    })
 
     const loginReq = (e) => {
         e.preventDefault();
         const data = {
             password: e.target.previousElementSibling.value
         };
-        // fetch("https://nameless-plains-23983.herokuapp.com/api/login", {
         fetch(`http://localhost:3001/api/login`, {
             method: "POST",
             mode: "cors",
