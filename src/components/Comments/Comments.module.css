@@ -1,42 +1,47 @@
 .commentsActive {
-    border: 2px solid rgb(0, 162, 255);
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-    margin-bottom: 10px;
+	border: 2px solid rgb(0, 162, 255);
+	text-align: center;
+	max-width: 500px;
+	margin: 0 auto;
+	margin-bottom: 10px;
 }
 
 .commentsInactive {
-  display: none;
+	display: none;
+}
+
+.commentContainer {
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 .commentInfo {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 .commentBody {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .paddingLast {
-    padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 .deleteBtn {
-    margin: 0 auto;
-    margin-bottom: 10px;
-    cursor: pointer;
-    width: fit-content;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	cursor: pointer;
+	width: fit-content;
 }
 
 #noCommentActive {
-    display: block;
+	display: block;
 }
 
 #noCommentInactive {
-    display: none;
+	display: none;
 }
 
 #commentName {
-    color: rgb(0, 174, 255);
+	color: rgb(0, 174, 255);
 }

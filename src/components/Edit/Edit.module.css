@@ -1,172 +1,183 @@
 .postContainer {
-    max-width: 500px;
-    margin: 0 auto;
-    position: relative;
-    height: fit-content;
-    margin-bottom: 25px;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+	max-width: 500px;
+	margin: 0 auto;
+	position: relative;
+	height: fit-content;
+	margin-bottom: 25px;
 }
 
 .postInfo {
-    padding-top: 25px;
+	padding-top: 25px;
 }
 
 .postTitle {
-    font-size: 40px;
+	font-size: 40px;
 }
 
 .postBody {
-    font-size: 20px;
+	font-size: 20px;
 }
 
-.prevBtn, .nextBtn {
-    position: absolute;
-    cursor: pointer;
-    border: none;
-    padding: 5px;
-    margin: 0;
-    width: fit-content;
+.prevBtn,
+.nextBtn {
+	position: absolute;
+	cursor: pointer;
+	border: none;
+	padding: 5px;
+	margin: 0;
+	width: fit-content;
 }
 
 .nextBtn {
-    right: 0;
-    top: 0;
+	right: 0;
+	top: 0;
 }
 
 .prevBtn {
-    top: 0;
-    left: 0;
+	top: 0;
+	left: 0;
 }
 
 .writeBtn {
-    position: absolute;
-    bottom: 10px;
-    right: 2px;
-    background-color: rgb(145, 231, 16);
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
-    outline: none;
-    cursor: pointer;
-    width: fit-content;
+	position: absolute;
+	bottom: 10px;
+	right: 2px;
+	background-color: rgb(145, 231, 16);
+	border: none;
+	border-radius: 3px;
+	padding: 5px;
+	outline: none;
+	cursor: pointer;
+	width: fit-content;
 }
 
 .deletePostBtn {
-    position: absolute;
-    bottom: 38px;
-    left: 2px;
-    background-color: red;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
-    outline: none;
-    cursor: pointer;
-    color: white;
-    width: fit-content;
+	position: absolute;
+	bottom: 38px;
+	left: 2px;
+	background-color: red;
+	border: none;
+	border-radius: 3px;
+	padding: 5px;
+	outline: none;
+	cursor: pointer;
+	color: white;
+	width: fit-content;
 }
 
 .deleteCommentsBtn {
-    position: absolute;
-    bottom: 10px;
-    left: 2px;
-    background-color: red;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
-    outline: none;
-    cursor: pointer;
-    color: white;
-    width: fit-content;
+	position: absolute;
+	bottom: 10px;
+	left: 2px;
+	background-color: red;
+	border: none;
+	border-radius: 3px;
+	padding: 5px;
+	outline: none;
+	cursor: pointer;
+	color: white;
+	width: fit-content;
 }
 
-.showCommentsBtn{
-    cursor: pointer;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: fit-content;
+.showCommentsBtn {
+	cursor: pointer;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: fit-content;
 }
 
 .commentInfo {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 .commentBody {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .commentsActive {
-    border: 2px solid red;
-    text-align: center;
-    width: 500px;
-    margin: 0 auto;
-    margin-bottom: 10px;
+	border: 2px solid red;
+	text-align: center;
+	width: 500px;
+	margin: 0 auto;
+	margin-bottom: 10px;
 }
 
 .commentsInactive {
-  display: none;
+	display: none;
 }
 
 .paddingLast {
-    padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 
-.writeBtn:hover, .logoutBtn:hover, .nextBtn:hover, .prevBtn:hover, .deleteCommentsBtn:hover, .deletePostsBtn:hover  {
-    opacity: 0.8;
-    outline: none;
+.writeBtn:hover,
+.logoutBtn:hover,
+.nextBtn:hover,
+.prevBtn:hover,
+.deleteCommentsBtn:hover,
+.deletePostsBtn:hover {
+	opacity: 0.8;
+	outline: none;
 }
 
 .logoutBtn {
-    position: absolute;
-    bottom: 38px;
-    right: 2px;
-    cursor: pointer;
-    padding: 5px;
-    border: none;
-    width: fit-content;
-    outline: none;
+	position: absolute;
+	bottom: 38px;
+	right: 2px;
+	cursor: pointer;
+	padding: 5px;
+	border: none;
+	width: fit-content;
+	outline: none;
 }
 
 #logoutContainer {
-    border: 2px solid red;
-    position: relative;
+	border: 2px solid red;
+	position: relative;
 }
 
 #btnContainer {
-    position: relative;
-    max-width: 500px;
-    margin: 0 auto;
-    height: 73px;
-    margin-top: 10px;
-    border: none;
+	position: relative;
+	max-width: 500px;
+	margin: 0 auto;
+	height: 73px;
+	margin-top: 10px;
+	border: none;
 }
 
 #information {
-    position: relative;
-    border: 2px solid black;
-   padding-bottom: 25px;
+	position: relative;
+	border: 2px solid black;
+	padding-bottom: 25px;
 }
 
 #mainContainer {
-    position: relative;
-    text-align: center;
-    justify-content: center;
+	position: relative;
+	text-align: center;
+	justify-content: center;
 }
 
 @media screen and (max-width: 250px) {
-    .deleteCommentsBtn, .logoutBtn, .writeBtn, .deletePostBtn  {
-        display: block;
-        width: 100%;
-        position: relative;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
-    #btnContainer {
-        height: fit-content;
-    }
-    .writeBtn {
-        margin-bottom: 30px;
-    }
+	.deleteCommentsBtn,
+	.logoutBtn,
+	.writeBtn,
+	.deletePostBtn {
+		display: block;
+		width: 100%;
+		position: relative;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+	#btnContainer {
+		height: fit-content;
+	}
+	.writeBtn {
+		margin-bottom: 30px;
+	}
 }
